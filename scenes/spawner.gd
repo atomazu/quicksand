@@ -6,8 +6,9 @@ extends Node
 @export var spawn_width: float
 
 func _ready() -> void:
-	await get_tree().create_timer(1).timeout
-	start()
+	for i in range(25):
+		await get_tree().create_timer(0.1).timeout
+		start()
 
 func start() -> void:
 	for entity in entities:

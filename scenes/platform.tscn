@@ -2,14 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://dfo34alxgy13h" path="res://assets/platform.png" id="1_ba0x2"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_far1q"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba0x2"]
+size = Vector2(656, 62)
 
 [node name="Platform" type="StaticBody2D" unique_id=210535174]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=31196712]
-shape = SubResource("WorldBoundaryShape2D_far1q")
+shape = SubResource("RectangleShape2D_ba0x2")
 
 [node name="Platform" type="Sprite2D" parent="." unique_id=1431632821]
 texture_filter = 1
-position = Vector2(0, 17)
+texture_repeat = 2
+scale = Vector2(2.1875, 2.03125)
 texture = ExtResource("1_ba0x2")
+region_enabled = true
+region_rect = Rect2(-134, 0, 300, 32)
