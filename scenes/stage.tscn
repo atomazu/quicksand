@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d4fk12lnxrekv"]
+
+[ext_resource type="Script" uid="uid://pyrtervf15lq" path="res://scenes/spawner.gd" id="1_6c5u0"]
+[ext_resource type="PackedScene" uid="uid://crx51wxlxkf6i" path="res://scenes/player.tscn" id="1_8rem4"]
+[ext_resource type="Script" uid="uid://1nw2i0ardlwb" path="res://entity.gd" id="2_2so7o"]
+[ext_resource type="Script" uid="uid://xwnmth4bj0bp" path="res://scenes/player.gd" id="2_gi7kc"]
+[ext_resource type="PackedScene" uid="uid://cfc7gsvvndlj2" path="res://scenes/platform.tscn" id="3_kewym"]
+[ext_resource type="Resource" uid="uid://dbq7l7q1tvt5i" path="res://entities/box.tres" id="3_st0q7"]
+
+[node name="Stage" type="Node2D" unique_id=435293471]
+
+[node name="Spawner" type="Node" parent="." unique_id=2051337331]
+script = ExtResource("1_6c5u0")
+entities = Array[ExtResource("2_2so7o")]([ExtResource("3_st0q7")])
+
+[node name="Player" parent="." unique_id=381838707 instance=ExtResource("1_8rem4")]
+script = ExtResource("2_gi7kc")
+action_move_left = "p1_move_left"
+action_move_right = "p1_move_right"
+action_jump = "p1_jump"
+
+[node name="Player2" parent="." unique_id=1336648173 instance=ExtResource("1_8rem4")]
+script = ExtResource("2_gi7kc")
+action_move_left = "p2_move_left"
+action_move_right = "p2_move_right"
+action_jump = "p2_jump"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=762059606]
+zoom = Vector2(2.69, 2.69)
+
+[node name="Platform" parent="." unique_id=210535174 instance=ExtResource("3_kewym")]
+position = Vector2(0, 100)
