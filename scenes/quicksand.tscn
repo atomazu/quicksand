@@ -101,7 +101,7 @@ shape = SubResource("RectangleShape2D_far1q")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=591973930]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(0, -85)
+position = Vector2(0, -103)
 texture = ExtResource("1_misx6")
 region_enabled = true
 region_rect = Rect2(0, 0, 1000, 64)
