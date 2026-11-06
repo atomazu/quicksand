@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://crx51wxlxkf6i"]
 
 [ext_resource type="Texture2D" uid="uid://bwrq5rhaxiokk" path="res://assets/player.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://xwnmth4bj0bp" path="res://scenes/player.gd" id="1_g2els"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3vyb7"]
+friction = 0.0
+bounce = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_far1q"]
 size = Vector2(19, 24)
 
-[node name="Player" type="CharacterBody2D" unique_id=381838707]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15jrk"]
+size = Vector2(19, 1)
+
+[node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area")]
+physics_material_override = SubResource("PhysicsMaterial_3vyb7")
+lock_rotation = true
+script = ExtResource("1_g2els")
+ground_area = NodePath("GroundDetection")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286655539]
 position = Vector2(-0.5, 2)
@@ -14,3 +26,10 @@ shape = SubResource("RectangleShape2D_far1q")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=644741127]
 texture_filter = 1
 texture = ExtResource("1_3vyb7")
+
+[node name="GroundDetection" type="Area2D" parent="." unique_id=1511495204]
+position = Vector2(0, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetection" unique_id=1735841062]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_15jrk")

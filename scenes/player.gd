@@ -1,28 +1,46 @@
-extends CharacterBody2D
-
+extends RigidBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = 400.0
 
+@export var ground_area: Area2D
 @export var action_move_left: String
 @export var action_move_right: String
 @export var action_jump: String
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+var bodies_below_feet: int
+var temp: bool = true
 
-	# Handle jump.
-	if Input.is_action_just_pressed(action_jump) and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func _ready() -> void:
+	ground_area.body_entered.connect(_on_ground_area_body_entered)
+	ground_area.body_exited.connect(_on_ground_area_body_exited)
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+func _physics_process(_delta: float) -> void:
+	if Input.is_action_pressed(action_jump) and bodies_below_feet > 1 and temp:
+		apply_central_impulse(Vector2.UP * JUMP_VELOCITY)
+		temp = false
+
+	if !Input.is_action_pressed(action_jump):
+		temp = true
+
 	var direction := Input.get_axis(action_move_left, action_move_right)
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if Input.is_action_just_pressed(action_move_left):
+		apply_central_impulse(Vector2(direction * SPEED, 0))
+	
+	if Input.is_action_just_pressed(action_move_right):
+		apply_central_impulse(Vector2(direction * SPEED, 0))
+	
+	apply_central_force(Vector2(direction * SPEED, 0))
+	
+	if abs(linear_velocity.x) > SPEED:
+		apply_central_force(Vector2(-direction * SPEED, 0))
+	
+	if direction == 0.0:
+		apply_central_impulse(Vector2(-linear_velocity.x, 0)/8)
 
-	move_and_slide()
+func _on_ground_area_body_entered(_body):
+	bodies_below_feet += 1
+
+func _on_ground_area_body_exited(_body):
+	bodies_below_feet -= 1
