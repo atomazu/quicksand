@@ -5,20 +5,23 @@
 [ext_resource type="Script" uid="uid://1nw2i0ardlwb" path="res://entity.gd" id="2_2so7o"]
 [ext_resource type="PackedScene" uid="uid://cfc7gsvvndlj2" path="res://scenes/platform.tscn" id="3_kewym"]
 [ext_resource type="Resource" uid="uid://dbq7l7q1tvt5i" path="res://entities/box.tres" id="3_st0q7"]
-[ext_resource type="PackedScene" uid="uid://qxwvb53t8nbx" path="res://scenes/quicksand.tscn" id="7_1hwpr"]
+[ext_resource type="PackedScene" uid="uid://0rpmxvwp7m76" path="res://entities/box_L.tscn" id="4_1hwpr"]
+[ext_resource type="PackedScene" uid="uid://qxwvb53t8nbx" path="res://scenes/quicksand.tscn" id="6_2so7o"]
 [ext_resource type="PackedScene" uid="uid://baw2uogbluxwt" path="res://scenes/background.tscn" id="7_st0q7"]
+
+[sub_resource type="Resource" id="Resource_st0q7"]
+script = ExtResource("2_2so7o")
+scene = ExtResource("4_1hwpr")
+metadata/_custom_type_script = "uid://1nw2i0ardlwb"
 
 [node name="Stage" type="Node2D" unique_id=435293471]
 
 [node name="Spawner" type="Node" parent="." unique_id=2051337331 node_paths=PackedStringArray("spawn_container")]
 script = ExtResource("1_6c5u0")
 spawn_container = NodePath("..")
-entities = Array[ExtResource("2_2so7o")]([ExtResource("3_st0q7")])
+entities = Array[ExtResource("2_2so7o")]([ExtResource("3_st0q7"), SubResource("Resource_st0q7")])
 spawn_height = -300.0
 spawn_width = 300.0
-
-[node name="Platform" parent="." unique_id=210535174 instance=ExtResource("3_kewym")]
-position = Vector2(0, 100)
 
 [node name="Player" parent="." unique_id=381838707 instance=ExtResource("1_8rem4")]
 position = Vector2(-36, 40)
@@ -32,9 +35,12 @@ action_move_left = "p2_move_left"
 action_move_right = "p2_move_right"
 action_jump = "p2_jump"
 
-[node name="Quicksand" parent="." unique_id=1548066918 instance=ExtResource("7_1hwpr")]
-position = Vector2(2, 186)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=762059606]
+
+[node name="Platform" parent="." unique_id=210535174 instance=ExtResource("3_kewym")]
+position = Vector2(0, 100)
+
+[node name="Area2D" parent="." unique_id=1548066918 instance=ExtResource("6_2so7o")]
+position = Vector2(0, 154)
 
 [node name="Background" parent="." unique_id=1604025533 instance=ExtResource("7_st0q7")]
