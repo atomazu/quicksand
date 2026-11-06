@@ -15,10 +15,10 @@ tracks/0/path = NodePath("Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Rect2(0, 0, 1000, 50)]
+"values": [Rect2(0, 0, 1000, 64)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -30,7 +30,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Rect2(0, 0, 1000, 50)]
+"values": [Rect2(0, 0, 1000, 64)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -104,7 +104,7 @@ texture_repeat = 2
 position = Vector2(0, -85)
 texture = ExtResource("1_misx6")
 region_enabled = true
-region_rect = Rect2(0, 0, 1000, 50)
+region_rect = Rect2(0, 0, 1000, 64)
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=787799973]
 texture_filter = 1
@@ -112,7 +112,7 @@ texture_repeat = 2
 position = Vector2(0, -85)
 texture = ExtResource("1_misx6")
 region_enabled = true
-region_rect = Rect2(0, 0, 1000, 50)
+region_rect = Rect2(0, 0, 1000, 64)
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1975486022]
 texture_filter = 1

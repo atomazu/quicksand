@@ -40,7 +40,6 @@ action_jump = "p2_jump"
 [node name="Platform" parent="." unique_id=210535174 instance=ExtResource("3_kewym")]
 position = Vector2(0, 100)
 
-[node name="Area2D" parent="." unique_id=1548066918 instance=ExtResource("6_2so7o")]
-position = Vector2(0, 154)
+[node name="Quicksand" parent="." unique_id=1548066918 instance=ExtResource("6_2so7o")]
 
 [node name="Background" parent="." unique_id=1604025533 instance=ExtResource("7_st0q7")]
