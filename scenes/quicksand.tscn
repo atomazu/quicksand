@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qxwvb53t8nbx"]
 
 [ext_resource type="Texture2D" uid="uid://cjn7mtmwg2ph0" path="res://assets/quicksand.png" id="1_misx6"]
+[ext_resource type="Script" uid="uid://cp41blqy8ojtg" path="res://scenes/quicksand.gd" id="1_qy2y6"]
 [ext_resource type="Texture2D" uid="uid://dwteilcm42a81" path="res://assets/sand.png" id="2_17qod"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_far1q"]
@@ -93,6 +94,7 @@ _data = {
 }
 
 [node name="Quicksand" type="Area2D" unique_id=1548066918]
+script = ExtResource("1_qy2y6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623951104]
 position = Vector2(-0.5, 75.5)
@@ -125,3 +127,6 @@ region_rect = Rect2(0, 0, 1000, 1000)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1109078705]
 libraries/ = SubResource("AnimationLibrary_abefo")
 autoplay = &"the_animation"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

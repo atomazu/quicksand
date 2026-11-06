@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bj5jfielxvkwx"]
+
+[ext_resource type="Texture2D" uid="uid://bu27oc3qimbeb" path="res://assets/box_line.png" id="1_7gk1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_far1q"]
+size = Vector2(8, 32)
+
+[node name="Box" type="Node2D" unique_id=2128368420]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=15681418]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1958041270]
+position = Vector2(-4, 8)
+shape = SubResource("RectangleShape2D_far1q")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=915361800]
+texture_filter = 1
+position = Vector2(8, 8)
+texture = ExtResource("1_7gk1c")

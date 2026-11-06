@@ -16,11 +16,6 @@ spawn_height = -300.0
 spawn_width = 300.0
 entity_list = ExtResource("2_2so7o")
 
-[node name="Quicksand2" parent="." unique_id=1548066918 instance=ExtResource("6_2so7o")]
-modulate = Color(0.72464263, 0.7246426, 0.7246426, 1)
-position = Vector2(-3, 176)
-scale = Vector2(-1, 1)
-
 [node name="Player" parent="." unique_id=381838707 instance=ExtResource("1_8rem4")]
 position = Vector2(-36, 40)
 action_move_left = "p1_move_left"
@@ -38,7 +33,15 @@ action_jump = "p2_jump"
 [node name="Platform" parent="." unique_id=210535174 instance=ExtResource("3_kewym")]
 position = Vector2(0, 100)
 
+[node name="Quicksand2" parent="." unique_id=1548066918 instance=ExtResource("6_2so7o")]
+modulate = Color(0.72464263, 0.7246426, 0.7246426, 1)
+z_index = -1
+position = Vector2(-3, 176)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
 [node name="Quicksand" parent="." unique_id=1373371177 instance=ExtResource("6_2so7o")]
-position = Vector2(0, 205)
+z_index = 10
+position = Vector2(0, 230)
 
 [node name="Background" parent="." unique_id=1604025533 instance=ExtResource("7_st0q7")]
