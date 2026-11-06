@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfc7gsvvndlj2" path="res://scenes/platform.tscn" id="3_kewym"]
 [ext_resource type="Resource" uid="uid://dbq7l7q1tvt5i" path="res://entities/box.tres" id="3_st0q7"]
 [ext_resource type="PackedScene" uid="uid://qxwvb53t8nbx" path="res://scenes/quicksand.tscn" id="6_2so7o"]
+[ext_resource type="PackedScene" uid="uid://baw2uogbluxwt" path="res://scenes/background.tscn" id="7_st0q7"]
 
 [node name="Stage" type="Node2D" unique_id=435293471]
 
@@ -35,3 +36,5 @@ position = Vector2(0, 100)
 
 [node name="Area2D" parent="." unique_id=1548066918 instance=ExtResource("6_2so7o")]
 position = Vector2(0, 154)
+
+[node name="Background" parent="." unique_id=1604025533 instance=ExtResource("7_st0q7")]
