@@ -13,7 +13,7 @@ func set_title() -> void:
 	set_text(title)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 var first_adjectiv = ["", "Quick", "Fast", "Schnell", "Sturmiger", "Sandiger", "Rocky", "Coarse", "Clean", "Defenitly", "Dirty", "Ofcourse"]

@@ -8,6 +8,23 @@
 [ext_resource type="PackedScene" uid="uid://di41vsiocn8xy" path="res://scenes/kill_barrier.tscn" id="7_1hwpr"]
 [ext_resource type="PackedScene" uid="uid://baw2uogbluxwt" path="res://scenes/background.tscn" id="7_st0q7"]
 [ext_resource type="PackedScene" uid="uid://caihj2gc8lptt" path="res://scenes/sand_clock.tscn" id="8_1hwpr"]
+[ext_resource type="Texture2D" uid="uid://dnsjox2joggb7" path="res://assets/sandkorn.png" id="9_dexii"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4k0v7"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 128.0
+inherit_velocity_ratio = 0.454
+spread = 90.0
+initial_velocity_min = 2.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 98, 0)
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 0.0
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.05
 
 [node name="Stage" type="Node2D" unique_id=435293471]
 
@@ -50,3 +67,15 @@ position = Vector2(0, 10000)
 
 [node name="SandClock" parent="." unique_id=2002228501 instance=ExtResource("8_1hwpr")]
 position = Vector2(444, -281)
+
+[node name="particles" type="Node2D" parent="." unique_id=1658416815]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="particles" unique_id=1276660435]
+z_index = 3
+position = Vector2(-3, -764)
+scale = Vector2(4.5, 4.5)
+amount = 1200
+texture = ExtResource("9_dexii")
+lifetime = 20.0
+randomness = 0.77
+process_material = SubResource("ParticleProcessMaterial_4k0v7")
