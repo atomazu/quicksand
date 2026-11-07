@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="quicksand"
-run/main_scene="uid://ca8rew2tw8kkf"
+run/main_scene="uid://cts2ddx20a6rp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

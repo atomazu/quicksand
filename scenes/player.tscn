@@ -36,10 +36,11 @@ position = Vector2(0, 15)
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_15jrk")
 
-[node name="GrabSystem" type="Node" parent="." unique_id=1151985556 node_paths=PackedStringArray("raycast", "grabpoint")]
+[node name="GrabSystem" type="Node" parent="." unique_id=1151985556 node_paths=PackedStringArray("raycast", "grabpoint", "lightcone")]
 script = ExtResource("3_qhqgy")
 raycast = NodePath("../GrabRayCast")
 grabpoint = NodePath("../GrabPoint")
+lightcone = NodePath("")
 
 [node name="GrabRayCast" type="RayCast2D" parent="." unique_id=82883217]
 target_position = Vector2(-30, 0)
