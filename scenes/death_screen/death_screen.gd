@@ -7,4 +7,4 @@ func _process(delta: float) -> void:
 		count += delta * 10
 		$Light.energy = count
 	if count > 3:
-		get_tree().change_scene_to_file("res://scenes/startmenu.tscn")
+		get_tree().change_scene_to_file("uid://ca8rew2tw8kkf") # UID Reference to start menu

@@ -55,8 +55,6 @@ func _on_ground_area_body_entered(_body: Node):
 func _on_ground_area_body_exited(_body):
 	bodies_below_feet -= 1
 
-# Also check for areas so that the quicksand counts as "ground"
-# Maybe in future use group for quicksand so othe arears arent confused with ground
 func _on_ground_area_area_entered(_body):
 	bodies_below_feet += 1
 	in_sand = true
@@ -67,11 +65,19 @@ func _on_ground_area_area_exited(_body):
 	bodies_below_feet -= 1
 	in_sand = false
 
+# TODO: Show who has won in results screen in versus mode
+# INVESTIGATE: Sometimes it does not progress to death scene... for some reason
 func _on_timer_timeout():
 	if sand_damp == 0:
-		Global.deaths_this_round += 1; if Global.deaths_this_round >= 2 || !Global.is_survival: Global.winner = name; get_tree().change_scene_to_file("res://scenes/death_screen.tscn");Global.deaths_this_round=0
+		Global.deaths_this_round += 1
+		# Called when: A player has died
+		# Versus => Exit to results screen
+		# Survival => If `Global.deaths_this_round` count is at least 2, exit to results screen
+		if ((not Global.is_survival) or (Global.deaths_this_round >= 2)): 
+			Global.winner = name
+			get_tree().change_scene_to_file("uid://30utcg1gn6of") # UID Reference to death screen
+			Global.deaths_this_round = 0
 	elif sand_damp < 0.15:
 		sand_damp = 0
 	else:
 		sand_damp *= 0.6
-	print(sand_damp)

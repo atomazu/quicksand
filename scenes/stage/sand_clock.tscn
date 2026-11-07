@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://caihj2gc8lptt"]
 
 [ext_resource type="Texture2D" uid="uid://dj748ko3wv7b4" path="res://assets/sand_clock_1.png" id="1_ctrmp"]
-[ext_resource type="Script" uid="uid://cx6shphq410y3" path="res://scenes/sand_clock.gd" id="1_j26ly"]
+[ext_resource type="Script" uid="uid://cx6shphq410y3" path="res://scenes/stage/sand_clock.gd" id="1_j26ly"]
 [ext_resource type="Texture2D" uid="uid://djibswamftbl4" path="res://assets/sand_clock_2.png" id="2_j26ly"]
 [ext_resource type="Texture2D" uid="uid://c44n0xlxyluxv" path="res://assets/sand_clock_3.png" id="3_7hwcp"]
 [ext_resource type="Texture2D" uid="uid://doh5l5rwq6cka" path="res://assets/sand_clock_4.png" id="4_xsb5i"]

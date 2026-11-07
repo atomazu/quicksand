@@ -8,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://cssecraaixrrp" path="res://assets/9.png" id="6_oveq4"]
 [ext_resource type="Texture2D" uid="uid://qxdjh54gpdi7" path="res://assets/7.png" id="7_086el"]
 [ext_resource type="Texture2D" uid="uid://dawbli2qou5w3" path="res://assets/6.png" id="8_28irt"]
-[ext_resource type="Script" uid="uid://1jg1aoovr17t" path="res://entities/start_button.gd" id="9_086el"]
-[ext_resource type="Script" uid="uid://cwhx8n27f4ovb" path="res://entities/versus.gd" id="10_kbbg3"]
-[ext_resource type="Script" uid="uid://ctd2hou8aq5pc" path="res://entities/title_gen.gd" id="11_qpdwg"]
+[ext_resource type="FontFile" uid="uid://to2u6qt3g7xr" path="res://assets/Dancing_Script/static/DancingScript-Bold.ttf" id="9_2i7qt"]
+[ext_resource type="Script" uid="uid://1jg1aoovr17t" path="res://scenes/title/start_survival.gd" id="9_086el"]
+[ext_resource type="Script" uid="uid://cwhx8n27f4ovb" path="res://scenes/title/start_versus.gd" id="10_kbbg3"]
+[ext_resource type="Script" uid="uid://ctd2hou8aq5pc" path="res://scenes/title/title_gen.gd" id="11_qpdwg"]
 
-[node name="Node2D" type="Node2D" unique_id=1280524597]
+[node name="Title" type="Node" unique_id=1751799469]
 
-[node name="Sprites" type="Node" parent="." unique_id=347571100]
+[node name="Sprites" type="Node2D" parent="." unique_id=405477236]
 
 [node name="CethielDesertEdit" type="Sprite2D" parent="Sprites" unique_id=1791317749]
 position = Vector2(575.5, 323.625)
@@ -59,47 +60,70 @@ position = Vector2(826, 612.00006)
 scale = Vector2(0.52597404, 0.462963)
 texture = ExtResource("8_28irt")
 
-[node name="survival" type="Button" parent="." unique_id=1996195822]
-z_index = 2
-offset_left = 494.0
-offset_top = 289.0
-offset_right = 648.0
-offset_bottom = 331.0
-script = ExtResource("9_086el")
-metadata/_edit_use_anchors_ = true
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=211157538]
-z_index = 5
-position = Vector2(576, 322)
-
-[node name="26" type="Sprite2D" parent="." unique_id=1892607401]
+[node name="28" type="Sprite2D" parent="Sprites" unique_id=1892607401]
 z_index = 1
 position = Vector2(389.00003, 693)
 scale = Vector2(0.83287716, 1.1216216)
 texture = ExtResource("5_3gbrr")
 
-[node name="versus" type="Button" parent="." unique_id=1376610668]
-z_index = 4
-offset_left = 495.0
-offset_top = 351.0
-offset_right = 648.0
-offset_bottom = 393.0
-script = ExtResource("10_kbbg3")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=211157538]
+z_index = 5
+position = Vector2(576, 322)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=628225815]
+[node name="Control" type="Control" parent="." unique_id=1056762732]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=481886308]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="RichTextLabel" parent="Control" unique_id=628225815]
 z_index = 10
-offset_left = 463.0
-offset_top = 203.0
-offset_right = 691.0
-offset_bottom = 243.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_left = 206.0
+offset_top = 86.0
+offset_right = 953.0
+offset_bottom = 238.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.52156866)
+theme_override_fonts/normal_font = ExtResource("9_2i7qt")
+theme_override_font_sizes/normal_font_size = 55
+text = "Title Text"
+scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("11_qpdwg")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=934968831]
-z_index = 1
-offset_left = 433.0
-offset_top = 184.0
-offset_right = 723.0
-offset_bottom = 259.0
-color = Color(0, 0, 0, 0.70980394)
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=603788545]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = 1.0
+offset_right = 116.0
+offset_bottom = 89.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Survival" type="Button" parent="Control/VBoxContainer" unique_id=1996195822]
+z_index = 2
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("9_086el")
+
+[node name="Versus" type="Button" parent="Control/VBoxContainer" unique_id=1376610668]
+z_index = 4
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("10_kbbg3")

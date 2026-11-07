@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://di41vsiocn8xy"]
 
-[ext_resource type="Script" uid="uid://dnah8i1ebmpkt" path="res://scenes/kill_barrier.gd" id="1_hcbex"]
+[ext_resource type="Script" uid="uid://dnah8i1ebmpkt" path="res://scenes/stage/kill_barrier.gd" id="1_hcbex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i60to"]
 size = Vector2(8441, 20)

@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Entity" format=3 uid="uid://b3pqw61jgf6f8"]
-
-[ext_resource type="PackedScene" uid="uid://0rpmxvwp7m76" path="res://entities/box_L.tscn" id="1_h3of1"]
-[ext_resource type="Script" uid="uid://1nw2i0ardlwb" path="res://entity.gd" id="1_md37i"]
-
-[resource]
-script = ExtResource("1_md37i")
-scene = ExtResource("1_h3of1")
-metadata/_custom_type_script = "uid://1nw2i0ardlwb"
