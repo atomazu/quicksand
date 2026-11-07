@@ -16,9 +16,11 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed(input_prefix + "_interact1"):
 		print("INTERACT PRESSED FOR " + input_prefix)
+		release_collider()
 		if raycast.get_collider() is RigidBody2D:
 			current_collider = raycast.get_collider()
 			current_collider.modulate = Color8(255, 255, 255, 100)
+
 
 func _physics_process(_delta: float) -> void:
 	if current_collider:
