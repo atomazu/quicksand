@@ -44,6 +44,8 @@ texture = ExtResource("1_3vyb7")
 
 [node name="GroundDetection" type="Area2D" parent="." unique_id=1511495204]
 position = Vector2(0, 15)
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetection" unique_id=1735841062]
 position = Vector2(0, 8)
