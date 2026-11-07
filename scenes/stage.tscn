@@ -31,7 +31,7 @@ turbulence_influence_max = 0.05
 [node name="Spawner" type="Node" parent="." unique_id=2051337331 node_paths=PackedStringArray("spawn_container")]
 script = ExtResource("1_6c5u0")
 spawn_container = NodePath("..")
-spawn_height = -300.0
+spawn_height = -400.0
 spawn_width = 300.0
 entity_list = ExtResource("2_2so7o")
 
