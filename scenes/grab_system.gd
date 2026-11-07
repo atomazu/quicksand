@@ -2,7 +2,8 @@ extends Node
 
 @export var raycast: RayCast2D
 @export var grabpoint: Node2D
-@export var lightcone: PointLight2D
+#@export var lightcone: PointLight2D
+@export var sprite: Sprite2D
 
 @onready var input_prefix = get_parent().input_prefix
 @onready var start_grab_dir: float = abs(grabpoint.position.x)
@@ -18,6 +19,10 @@ func _input(event: InputEvent) -> void:
 	if direction != 0.0:
 		raycast.target_position.x = start_raycast_target * sign(direction)
 		grabpoint.position.x = start_grab_dir * sign(direction)
+		if direction < 0:
+			sprite.flip_h = false
+		else:
+			sprite.flip_h = true
 		#lightcone.scale.x = lightcone_start_size * sign(direction)
 	
 	if event.is_action_pressed(input_prefix + "_interact1"):

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bwrq5rhaxiokk" path="res://assets/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://xwnmth4bj0bp" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Shader" uid="uid://d24ctoml41xv2" path="res://scenes/outline.gdshader" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://bcix6pm08eq6h" path="res://scenes/grab_system.gd" id="3_qhqgy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3vyb7"]
@@ -9,10 +10,18 @@ friction = 0.0
 bounce = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_far1q"]
-size = Vector2(19, 24)
+size = Vector2(13.333334, 25.555557)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlg0r"]
+shader = ExtResource("2_dqkch")
+shader_parameter/color = Color(0.85750073, 0.85750073, 0.85750073, 1)
+shader_parameter/width = 0.50000002375
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15jrk"]
-size = Vector2(15, 1)
+size = Vector2(15, 2)
 
 [node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area") groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_3vyb7")
@@ -22,31 +31,35 @@ ground_area = NodePath("GroundDetection")
 input_prefix = "p1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286655539]
-position = Vector2(-0.5, 2)
+position = Vector2(-4.7683716e-07, 0)
+scale = Vector2(1.8, 1.8)
 shape = SubResource("RectangleShape2D_far1q")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=644741127]
 texture_filter = 1
+material = SubResource("ShaderMaterial_qlg0r")
+position = Vector2(0, -5.28)
+scale = Vector2(2, 2)
 texture = ExtResource("1_3vyb7")
 
 [node name="GroundDetection" type="Area2D" parent="." unique_id=1511495204]
 position = Vector2(0, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetection" unique_id=1735841062]
-position = Vector2(-0.5, -0.5)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_15jrk")
 
-[node name="GrabSystem" type="Node" parent="." unique_id=1151985556 node_paths=PackedStringArray("raycast", "grabpoint", "lightcone")]
+[node name="GrabSystem" type="Node" parent="." unique_id=1151985556 node_paths=PackedStringArray("raycast", "grabpoint", "sprite")]
 script = ExtResource("3_qhqgy")
 raycast = NodePath("../GrabRayCast")
 grabpoint = NodePath("../GrabPoint")
-lightcone = NodePath("")
+sprite = NodePath("../Sprite2D")
 
 [node name="GrabRayCast" type="RayCast2D" parent="." unique_id=82883217]
-target_position = Vector2(-30, 0)
+target_position = Vector2(-50, 0)
 
 [node name="GrabPoint" type="Node2D" parent="." unique_id=213734272]
-position = Vector2(-30, 0)
+position = Vector2(-50, 0)
 
 [node name="ColorRect" type="ColorRect" parent="GrabPoint" unique_id=269908033]
 offset_left = -1.0
