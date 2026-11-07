@@ -8,7 +8,7 @@ extends Node
 var time = 1.0
 
 func _ready() -> void:
-	for i in range(10):
+	for i in range(5):
 		await get_tree().create_timer(0.2).timeout
 		start()
 
@@ -18,12 +18,10 @@ func _process(delta: float) -> void:
 func start() -> void:
 	while true:
 		for entity in entity_list.entities:
-			# TODO play with optimal randomized spawn timer
 			await get_tree().create_timer(randi_range(2 + sqrt(time),  3 + sqrt(time))).timeout
 			var instance: Node2D = entity.scene.instantiate()
-			var size = Vector2.ONE*randi_range(1, 3)
-			# TODO perhaps add floating scaling
-			# TODO add that size scales smaller over time
+			var size = Vector2.ONE
+			size = size * (0.1 * randi_range(20 / (1 + sqrt(time*0.01)), 30 / 1 + (sqrt(time*0.01))))
 			instance.get_child(0).get_child(0).scale = size
 			instance.get_child(0).get_child(1).scale = size
 			spawn_container.add_child.call_deferred(instance)
