@@ -18,15 +18,10 @@ entity_list = ExtResource("2_2so7o")
 
 [node name="Player" parent="." unique_id=381838707 instance=ExtResource("1_8rem4")]
 position = Vector2(-36, 40)
-action_move_left = "p1_move_left"
-action_move_right = "p1_move_right"
-action_jump = "p1_jump"
 
 [node name="Player2" parent="." unique_id=1336648173 instance=ExtResource("1_8rem4")]
 position = Vector2(32, 40)
-action_move_left = "p2_move_left"
-action_move_right = "p2_move_right"
-action_jump = "p2_jump"
+input_prefix = "p2"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=762059606]
 
