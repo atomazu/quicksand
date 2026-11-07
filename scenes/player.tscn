@@ -57,6 +57,7 @@ sprite = NodePath("../Sprite2D")
 
 [node name="GrabRayCast" type="RayCast2D" parent="." unique_id=82883217]
 target_position = Vector2(-50, 0)
+collision_mask = 7
 
 [node name="GrabPoint" type="Node2D" parent="." unique_id=213734272]
 position = Vector2(-50, 0)

@@ -35,6 +35,12 @@ func _input(event: InputEvent) -> void:
 				print("INTERACT: Can't grab player")
 				return
 			current_collider = raycast.get_collider()
+			if get_parent().get_collision_layer_value(2):
+				current_collider.set_collision_layer_value(2,false)
+				current_collider.set_collision_mask_value(2,false)
+			elif get_parent().get_collision_layer_value(3):
+				current_collider.set_collision_layer_value(3,false)
+				current_collider.set_collision_mask_value(3,false)
 			current_collider.modulate = Color8(255, 255, 255, 200)
 
 func _physics_process(_delta: float) -> void:
@@ -63,4 +69,8 @@ func release_collider() -> void:
 	
 	last_collider = current_collider
 	last_collider.modulate = Color.WHITE
+	last_collider.set_collision_layer_value(2,true)
+	last_collider.set_collision_layer_value(3,true)
+	last_collider.set_collision_mask_value(2,true)
+	last_collider.set_collision_mask_value(3,true)
 	current_collider = null
