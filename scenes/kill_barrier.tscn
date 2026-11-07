@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://di41vsiocn8xy"]
+
+[ext_resource type="Script" uid="uid://dnah8i1ebmpkt" path="res://scenes/kill_barrier.gd" id="1_hcbex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i60to"]
+size = Vector2(8441, 20)
+
+[node name="KillBarrier" type="Area2D" unique_id=1274734412]
+script = ExtResource("1_hcbex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724389714]
+shape = SubResource("RectangleShape2D_i60to")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
