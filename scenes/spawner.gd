@@ -4,9 +4,7 @@ extends Node
 @export var spawn_height: float
 @export var spawn_width: float
 @export var entity_list: EntityList
-
-var time = 1.0
-
+var time := 0.0
 func _ready() -> void:
 	for i in range(5):
 		await get_tree().create_timer(0.2).timeout

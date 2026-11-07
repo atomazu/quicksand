@@ -1,12 +1,6 @@
 extends Node
 
 var is_survival: bool
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var time := 0.0
+var deaths_this_round := 0
+var winner: String

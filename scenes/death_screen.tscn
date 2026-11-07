@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c1vrjjm7rdhto" path="res://assets/cethiel-desert-edit.png" id="4_wraau"]
 [ext_resource type="Texture2D" uid="uid://dawbli2qou5w3" path="res://assets/6.png" id="5_vyrcq"]
 [ext_resource type="Texture2D" uid="uid://dxjt0pg84fok2" path="res://assets/lightcone.png" id="6_wfw3d"]
+[ext_resource type="AudioStream" uid="uid://d3k2dykeuq4bs" path="res://sounds/bg.wav" id="8_wraau"]
+[ext_resource type="Script" uid="uid://6ydrnbudhtyt" path="res://scenes/death_screen_score_label.gd" id="9_vyrcq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i60to"]
 font_size = 100
@@ -72,3 +74,16 @@ offset_right = 435.0
 offset_bottom = 270.0
 text = "Score:"
 label_settings = SubResource("LabelSettings_3a5br")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1072232206]
+stream = ExtResource("8_wraau")
+autoplay = true
+
+[node name="Label" type="Label" parent="." unique_id=303109850]
+offset_left = 310.0
+offset_top = 204.0
+offset_right = 657.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 50
+text = "%i"
+script = ExtResource("9_vyrcq")

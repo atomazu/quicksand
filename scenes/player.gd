@@ -68,7 +68,10 @@ func _on_ground_area_area_exited(_body):
 	in_sand = false
 
 func _on_timer_timeout():
-	if sand_damp < 0.15:
+	if sand_damp == 0:
+		Global.deaths_this_round += 1; if Global.deaths_this_round >= 2 || !Global.is_survival: Global.winner = name; get_tree().change_scene_to_file("res://scenes/death_screen.tscn");Global.deaths_this_round=0
+	elif sand_damp < 0.15:
 		sand_damp = 0
 	else:
 		sand_damp *= 0.6
+	print(sand_damp)

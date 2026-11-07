@@ -1,0 +1,1 @@
+extends Area2D#; var d := 0; func _ready() -> void: body_entered.connect((func(b): if b.is_in_group("Player"): d += 1; if d >= 2 || !Global.is_survival : get_tree().change_scene_to_file("res://scenes/death_screen.tscn");d=0))
