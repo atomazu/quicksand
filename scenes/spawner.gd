@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func start() -> void:
 	for entity in entity_list.entities:
+		# TODO play with optimal randomized spawn timer
 		await get_tree().create_timer(randi_range(1, 6)).timeout
 		var instance: Node2D = entity.scene.instantiate()
 		spawn_container.add_child.call_deferred(instance)
