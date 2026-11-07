@@ -16,6 +16,8 @@ func set_title() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-var first_adjectiv = ["", "Quick", "Fast", "Schnell", "Sturmiger", "Sandiger", "Rocky", "Coarse", "Clean", "Defenitly", "Dirty", "Ofcourse"]
-var middle_noun = ["Sand", "Sandsturm"]
-var last_adjectiv = ["", "Quick", "Fast", "Schnell", "Sturmiger", "Sandiger", "Rocky", "Coarse", "Clean", "Defenitly", "Dirty", "Ofcourse"]
+var first_adjectiv = ["", "Quick", "Fast", "Schnell", "Sturmiger", "Sandiger", "Rocky", "Coarse", "Clean", "Defenitly", \
+"Dirty", "Ofcourse", "Fine", "Radioactive", "Beige", "Dusty", "Smooth"]
+var middle_noun = ["Sand", "Sandsturm", "Sandstein"]
+var last_adjectiv = ["", "Quick", "Fast", "Schnell", "Sturmiger", "Sandiger", "Rocky", "Coarse", "Clean", "Defenitly", \
+ "Dirty", "Ofcourse", "Fine", "Radioactive", "Beige", "Dusty", "Smooth"]
