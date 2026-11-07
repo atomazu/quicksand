@@ -36,17 +36,20 @@ position = Vector2(0, 15)
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_15jrk")
 
-[node name="GrabSystem" type="Node" parent="." unique_id=1151985556 node_paths=PackedStringArray("raycast", "grabpoint")]
+[node name="GrabSystem" type="Node" parent="." unique_id=1151985556 node_paths=PackedStringArray("raycast", "grabpoint", "pinjoin")]
 script = ExtResource("3_qhqgy")
 raycast = NodePath("../GrabRayCast")
 grabpoint = NodePath("../GrabPoint")
+pinjoin = NodePath("")
 
 [node name="GrabRayCast" type="RayCast2D" parent="." unique_id=82883217]
-target_position = Vector2(-34, 9)
+target_position = Vector2(-30, 0)
 
 [node name="GrabPoint" type="Node2D" parent="." unique_id=213734272]
 position = Vector2(-30, 0)
 
 [node name="ColorRect" type="ColorRect" parent="GrabPoint" unique_id=269908033]
+offset_left = -1.0
+offset_top = -1.0
 offset_right = 1.0
 offset_bottom = 1.0
