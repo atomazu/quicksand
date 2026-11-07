@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func _pressed() -> void:
-	# TODO change scene to correct scene
+	Global.is_survival = false
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	pass
 

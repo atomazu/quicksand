@@ -7,6 +7,7 @@ func _ready() -> void:
 
 
 func _pressed() -> void:
+	Global.is_survival = true
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	pass
 
