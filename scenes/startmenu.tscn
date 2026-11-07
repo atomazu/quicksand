@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://chah5n18q431s"]
+[gd_scene format=3 uid="uid://ca8rew2tw8kkf"]
 
 [ext_resource type="Texture2D" uid="uid://c1vrjjm7rdhto" path="res://assets/cethiel-desert-edit.png" id="1_hhy7i"]
 [ext_resource type="Texture2D" uid="uid://day3y16sift5i" path="res://assets/27.png" id="2_3gbrr"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://qxdjh54gpdi7" path="res://assets/7.png" id="7_086el"]
 [ext_resource type="Texture2D" uid="uid://dawbli2qou5w3" path="res://assets/6.png" id="8_28irt"]
 [ext_resource type="Script" uid="uid://1jg1aoovr17t" path="res://entities/start_button.gd" id="9_086el"]
+[ext_resource type="Script" uid="uid://cwhx8n27f4ovb" path="res://entities/versus.gd" id="10_kbbg3"]
+[ext_resource type="Script" uid="uid://ctd2hou8aq5pc" path="res://entities/title_gen.gd" id="11_qpdwg"]
 
 [node name="Node2D" type="Node2D" unique_id=1280524597]
 
@@ -57,12 +59,12 @@ position = Vector2(826, 612.00006)
 scale = Vector2(0.52597404, 0.462963)
 texture = ExtResource("8_28irt")
 
-[node name="Button" type="Button" parent="." unique_id=1996195822]
+[node name="survival" type="Button" parent="." unique_id=1996195822]
 z_index = 2
 offset_left = 494.0
-offset_top = 301.0
+offset_top = 289.0
 offset_right = 648.0
-offset_bottom = 343.0
+offset_bottom = 331.0
 script = ExtResource("9_086el")
 metadata/_edit_use_anchors_ = true
 
@@ -75,3 +77,29 @@ z_index = 1
 position = Vector2(389.00003, 693)
 scale = Vector2(0.83287716, 1.1216216)
 texture = ExtResource("5_3gbrr")
+
+[node name="versus" type="Button" parent="." unique_id=1376610668]
+z_index = 4
+offset_left = 495.0
+offset_top = 351.0
+offset_right = 648.0
+offset_bottom = 393.0
+script = ExtResource("10_kbbg3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=628225815]
+z_index = 10
+offset_left = 463.0
+offset_top = 203.0
+offset_right = 691.0
+offset_bottom = 243.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+horizontal_alignment = 1
+script = ExtResource("11_qpdwg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=934968831]
+z_index = 1
+offset_left = 433.0
+offset_top = 184.0
+offset_right = 723.0
+offset_bottom = 259.0
+color = Color(0, 0, 0, 0.70980394)
