@@ -71,4 +71,4 @@ func _on_timer_timeout():
 	if sand_damp < 0.15:
 		sand_damp = 0
 	else:
-		sand_damp *= 0.8
+		sand_damp *= 0.6
