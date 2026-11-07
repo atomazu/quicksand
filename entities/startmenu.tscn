@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://chah5n18q431s"]
+
+[ext_resource type="Texture2D" uid="uid://c1vrjjm7rdhto" path="res://assets/cethiel-desert-edit.png" id="1_hhy7i"]
+[ext_resource type="Texture2D" uid="uid://day3y16sift5i" path="res://assets/27.png" id="2_3gbrr"]
+[ext_resource type="Texture2D" uid="uid://dvo41i6psj58d" path="res://assets/25.png" id="3_o76yq"]
+[ext_resource type="Texture2D" uid="uid://d1m4xjhhuh4cj" path="res://assets/11.png" id="4_iqlyr"]
+[ext_resource type="Texture2D" uid="uid://cqpgbf0lbpyus" path="res://assets/26.png" id="5_3gbrr"]
+[ext_resource type="Texture2D" uid="uid://cssecraaixrrp" path="res://assets/9.png" id="6_oveq4"]
+[ext_resource type="Texture2D" uid="uid://qxdjh54gpdi7" path="res://assets/7.png" id="7_086el"]
+[ext_resource type="Texture2D" uid="uid://dawbli2qou5w3" path="res://assets/6.png" id="8_28irt"]
+[ext_resource type="Script" uid="uid://1jg1aoovr17t" path="res://entities/start_button.gd" id="9_086el"]
+
+[node name="Node2D" type="Node2D" unique_id=1280524597]
+
+[node name="Sprites" type="Node" parent="." unique_id=347571100]
+
+[node name="CethielDesertEdit" type="Sprite2D" parent="Sprites" unique_id=1791317749]
+position = Vector2(575.5, 323.625)
+scale = Vector2(1.4046456, 1.007422)
+texture = ExtResource("1_hhy7i")
+
+[node name="27" type="Sprite2D" parent="Sprites" unique_id=1389720441]
+z_index = 2
+position = Vector2(113, 596.00006)
+scale = Vector2(0.61483246, 0.65969574)
+texture = ExtResource("2_3gbrr")
+
+[node name="25" type="Sprite2D" parent="Sprites" unique_id=609649305]
+z_index = 1
+position = Vector2(701, 598)
+scale = Vector2(1.0213236, 0.8055557)
+texture = ExtResource("3_o76yq")
+
+[node name="11" type="Sprite2D" parent="Sprites" unique_id=287189568]
+position = Vector2(134.99998, 508)
+scale = Vector2(0.48734176, 0.44366196)
+texture = ExtResource("4_iqlyr")
+
+[node name="26" type="Sprite2D" parent="Sprites" unique_id=1233734805]
+z_index = 1
+position = Vector2(1002, 574.00006)
+scale = Vector2(0.83287716, 1.1216216)
+texture = ExtResource("5_3gbrr")
+
+[node name="9" type="Sprite2D" parent="Sprites" unique_id=532633898]
+position = Vector2(718, 631)
+scale = Vector2(0.81617785, 0.85499924)
+texture = ExtResource("6_oveq4")
+
+[node name="7" type="Sprite2D" parent="Sprites" unique_id=701611272]
+position = Vector2(1074, 598)
+scale = Vector2(0.7398649, 0.76968515)
+texture = ExtResource("7_086el")
+
+[node name="6" type="Sprite2D" parent="Sprites" unique_id=49616081]
+position = Vector2(826, 612.00006)
+scale = Vector2(0.52597404, 0.462963)
+texture = ExtResource("8_28irt")
+
+[node name="Button" type="Button" parent="." unique_id=1996195822]
+z_index = 2
+offset_left = 494.0
+offset_top = 301.0
+offset_right = 648.0
+offset_bottom = 343.0
+script = ExtResource("9_086el")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=211157538]
+z_index = 5
+position = Vector2(576, 322)
+
+[node name="26" type="Sprite2D" parent="." unique_id=1892607401]
+z_index = 1
+position = Vector2(389.00003, 693)
+scale = Vector2(0.83287716, 1.1216216)
+texture = ExtResource("5_3gbrr")
