@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://c6yawuml1lot0" path="res://entities/initial.tres" id="2_2so7o"]
 [ext_resource type="PackedScene" uid="uid://cfc7gsvvndlj2" path="res://scenes/platform.tscn" id="3_kewym"]
 [ext_resource type="PackedScene" uid="uid://qxwvb53t8nbx" path="res://scenes/quicksand.tscn" id="6_2so7o"]
+[ext_resource type="PackedScene" uid="uid://di41vsiocn8xy" path="res://scenes/kill_barrier.tscn" id="7_1hwpr"]
 [ext_resource type="PackedScene" uid="uid://baw2uogbluxwt" path="res://scenes/background.tscn" id="7_st0q7"]
 
 [node name="Stage" type="Node2D" unique_id=435293471]
@@ -40,3 +41,6 @@ z_index = 10
 position = Vector2(0, 230)
 
 [node name="Background" parent="." unique_id=1604025533 instance=ExtResource("7_st0q7")]
+
+[node name="KillBarrier" parent="." unique_id=1274734412 instance=ExtResource("7_1hwpr")]
+position = Vector2(0, 10000)
