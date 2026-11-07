@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qxwvb53t8nbx" path="res://scenes/quicksand.tscn" id="6_2so7o"]
 [ext_resource type="PackedScene" uid="uid://di41vsiocn8xy" path="res://scenes/kill_barrier.tscn" id="7_1hwpr"]
 [ext_resource type="PackedScene" uid="uid://baw2uogbluxwt" path="res://scenes/background.tscn" id="7_st0q7"]
+[ext_resource type="PackedScene" uid="uid://caihj2gc8lptt" path="res://scenes/sand_clock.tscn" id="8_1hwpr"]
 
 [node name="Stage" type="Node2D" unique_id=435293471]
 
@@ -44,3 +45,6 @@ position = Vector2(0, 230)
 
 [node name="KillBarrier" parent="." unique_id=1274734412 instance=ExtResource("7_1hwpr")]
 position = Vector2(0, 10000)
+
+[node name="SandClock" parent="." unique_id=2002228501 instance=ExtResource("8_1hwpr")]
+position = Vector2(444, -281)
