@@ -14,5 +14,4 @@ shape = SubResource("RectangleShape2D_far1q")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=915361800]
 texture_filter = 1
-position = Vector2(8, 8)
 texture = ExtResource("1_c475x")

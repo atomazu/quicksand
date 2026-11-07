@@ -7,9 +7,8 @@
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=15681418]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=9147987]
-polygon = PackedVector2Array(0, -8, -8, -8, -8, 8, 0, 8, 0, 16, 8, 16, 8, 0, 0, 0)
+polygon = PackedVector2Array(0, -12, -8, -12, -8, 4, 0, 4, 0, 12, 8, 12, 8, -4, 0, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=915361800]
 texture_filter = 1
-position = Vector2(8, 8)
 texture = ExtResource("1_gc7hg")
