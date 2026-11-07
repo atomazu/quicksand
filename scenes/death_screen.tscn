@@ -8,6 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dawbli2qou5w3" path="res://assets/6.png" id="5_vyrcq"]
 [ext_resource type="Texture2D" uid="uid://dxjt0pg84fok2" path="res://assets/lightcone.png" id="6_wfw3d"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_i60to"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_3a5br"]
+font_size = 50
+
 [node name="death_screen" type="Node2D" unique_id=839215207]
 script = ExtResource("1_wtkkp")
 
@@ -44,8 +50,25 @@ rotation = 2.0943952
 scale = Vector2(2, 2)
 texture = ExtResource("2_wfw3d")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1654465887]
+[node name="Light" type="PointLight2D" parent="." unique_id=1654465887]
 position = Vector2(796, 97.99996)
 rotation = -1.1047934
 scale = Vector2(1.12, 1.12)
+energy = 0.2
 texture = ExtResource("6_wfw3d")
+
+[node name="Title" type="Label" parent="." unique_id=1770491515]
+offset_left = 58.0
+offset_top = 72.0
+offset_right = 601.0
+offset_bottom = 209.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_i60to")
+
+[node name="Score" type="Label" parent="." unique_id=1626149561]
+offset_left = 153.0
+offset_top = 201.0
+offset_right = 435.0
+offset_bottom = 270.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_3a5br")
