@@ -6,18 +6,25 @@ const JUMP_VELOCITY = 400.0
 @export var ground_area: Area2D
 @export var input_prefix: String
 
+@onready var timer := Timer.new()
+
 var bodies_below_feet: int
 var can_jump: bool = true
+var in_sand: bool = false
+var sand_damp = 1
 
 func _ready() -> void:
 	ground_area.body_entered.connect(_on_ground_area_body_entered)
 	ground_area.body_exited.connect(_on_ground_area_body_exited)
-	ground_area.area_entered.connect(_on_ground_area_body_entered)
-	ground_area.area_exited.connect(_on_ground_area_body_exited)
+	ground_area.area_entered.connect(_on_ground_area_area_entered)
+	ground_area.area_exited.connect(_on_ground_area_area_exited)
+	timer.timeout.connect(_on_timer_timeout)
+	add_child(timer)
+	
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed(input_prefix + "_jump") and bodies_below_feet > 1 and can_jump:
-		apply_central_impulse(Vector2.UP * JUMP_VELOCITY)
+		apply_central_impulse(Vector2.UP * JUMP_VELOCITY * sand_damp)
 		can_jump = false
 
 	if !Input.is_action_pressed(input_prefix + "_jump"):
@@ -26,10 +33,10 @@ func _physics_process(_delta: float) -> void:
 	var direction := Input.get_axis(input_prefix + "_move_left", input_prefix + "_move_right")
 	
 	if Input.is_action_just_pressed(input_prefix + "_move_left"):
-		apply_central_impulse(Vector2(direction * SPEED, 0))
+		apply_central_impulse(Vector2(direction * SPEED * sand_damp, 0))
 	
 	if Input.is_action_just_pressed(input_prefix + "_move_right"):
-		apply_central_impulse(Vector2(direction * SPEED, 0))
+		apply_central_impulse(Vector2(direction * SPEED * sand_damp, 0))
 	
 	apply_central_force(Vector2(direction * SPEED, 0))
 	
@@ -39,8 +46,11 @@ func _physics_process(_delta: float) -> void:
 	if direction == 0.0:
 		apply_central_impulse(Vector2(-linear_velocity.x, 0)/8)
 
-func _on_ground_area_body_entered(_body):
+func _on_ground_area_body_entered(_body: Node):
 	bodies_below_feet += 1
+	if !timer.is_stopped() and !_body.is_in_group("Player") and !_body is TileMapLayer and !in_sand:
+		timer.stop()
+		sand_damp = 1
 
 func _on_ground_area_body_exited(_body):
 	bodies_below_feet -= 1
@@ -49,6 +59,16 @@ func _on_ground_area_body_exited(_body):
 # Maybe in future use group for quicksand so othe arears arent confused with ground
 func _on_ground_area_area_entered(_body):
 	bodies_below_feet += 1
+	in_sand = true
+	if timer.is_stopped():
+		timer.start(1)
 
 func _on_ground_area_area_exited(_body):
 	bodies_below_feet -= 1
+	in_sand = false
+
+func _on_timer_timeout():
+	if sand_damp < 0.15:
+		sand_damp = 0
+	else:
+		sand_damp *= 0.8

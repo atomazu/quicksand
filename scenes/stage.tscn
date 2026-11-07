@@ -36,6 +36,8 @@ z_index = -1
 position = Vector2(-3, 176)
 rotation = 3.1415927
 scale = Vector2(1, -1)
+monitoring = false
+monitorable = false
 
 [node name="Quicksand" parent="." unique_id=1373371177 instance=ExtResource("6_2so7o")]
 z_index = 10

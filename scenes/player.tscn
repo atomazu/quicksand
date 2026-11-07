@@ -12,9 +12,9 @@ bounce = 0.3
 size = Vector2(19, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15jrk"]
-size = Vector2(17, 1)
+size = Vector2(15, 1)
 
-[node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area")]
+[node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area") groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_3vyb7")
 lock_rotation = true
 script = ExtResource("1_g2els")
