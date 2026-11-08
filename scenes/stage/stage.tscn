@@ -74,12 +74,16 @@ z_index = -1
 position = Vector2(-3, 176)
 rotation = 3.1415927
 scale = Vector2(1, -1)
+collision_layer = 7
+collision_mask = 7
 monitoring = false
 monitorable = false
 
 [node name="Quicksand" parent="." unique_id=1373371177 instance=ExtResource("6_2so7o")]
 z_index = 10
 position = Vector2(0, 230)
+collision_layer = 7
+collision_mask = 7
 
 [node name="Background" parent="." unique_id=1604025533 instance=ExtResource("7_st0q7")]
 
@@ -111,10 +115,12 @@ shape = SubResource("WorldBoundaryShape2D_far1q")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1694650516]
 stream = ExtResource("11_cwi0x")
+volume_db = -30.0
 autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1472087143]
 stream = ExtResource("12_lrsvv")
+volume_db = -30.0
 autoplay = true
 
 [editable path="Player"]
