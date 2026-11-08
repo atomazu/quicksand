@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbpoflllc0mf7"]
 
 [ext_resource type="Texture2D" uid="uid://4b5ch2dph2r3" path="res://assets/box.png" id="1_c475x"]
+[ext_resource type="Script" uid="uid://p1xffypw0fml" path="res://entities/collision_sounder.gd" id="1_ls4fa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_far1q"]
 size = Vector2(16, 16)
@@ -11,6 +12,9 @@ size = Vector2(16, 16)
 collision_layer = 6
 collision_mask = 6
 gravity_scale = 0.8
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_ls4fa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1958041270]
 shape = SubResource("RectangleShape2D_far1q")
