@@ -14,7 +14,7 @@ size = Vector2(13.333334, 25.555557)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qlg0r"]
 shader = ExtResource("2_dqkch")
-shader_parameter/color = Color(0.85750073, 0.85750073, 0.85750073, 1)
+shader_parameter/color = Color(0.857994, 0.8605549, 0.8489184, 1)
 shader_parameter/width = 0.50000002375
 shader_parameter/pattern = 0
 shader_parameter/inside = false
@@ -24,13 +24,15 @@ shader_parameter/add_margins = true
 radius = 5.0
 height = 20.0
 
-[node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area", "grab_system") groups=["Player"]]
+[node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area", "grab_system", "sprite") groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_3vyb7")
 lock_rotation = true
 script = ExtResource("1_g2els")
 ground_area = NodePath("GroundDetection")
 input_prefix = "p1"
 grab_system = NodePath("GrabSystem")
+player_color = Color(1, 1, 1, 1)
+sprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286655539]
 position = Vector2(-4.7683716e-07, 0)

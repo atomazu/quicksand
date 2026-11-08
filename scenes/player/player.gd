@@ -6,6 +6,8 @@ const JUMP_VELOCITY = 400.0
 @export var ground_area: Area2D
 @export var input_prefix: String
 @export var grab_system: Node
+@export var player_color: Color
+@export var sprite: Sprite2D
 
 @onready var timer := Timer.new()
 
@@ -15,6 +17,9 @@ var in_sand: bool = false
 var sand_damp = 1
 
 func _ready() -> void:
+	var smat: ShaderMaterial = sprite.material.duplicate(true)
+	smat.set_shader_parameter("color", player_color)
+	sprite.material = smat
 	ground_area.body_entered.connect(_on_ground_area_body_entered)
 	ground_area.body_exited.connect(_on_ground_area_body_exited)
 	ground_area.area_entered.connect(_on_ground_area_area_entered)
@@ -90,7 +95,7 @@ func _on_timer_timeout():
 			Global.winner = name
 			get_tree().change_scene_to_file("uid://30utcg1gn6of") # UID Reference to death screen
 			Global.deaths_this_round = 0
-		queue_free()
+		queue_free.call_deferred()
 	elif sand_damp < 0.15:
 		sand_damp = 0
 	else:

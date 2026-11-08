@@ -56,10 +56,18 @@ func _physics_process(_delta: float) -> void:
 		if not o_sprite: return
 		var mat := ShaderMaterial.new() 
 		mat.shader = preload("uid://d24ctoml41xv2")
+		mat.set_shader_parameter("color", sprite.material.get_shader_parameter("color"))
 		o_sprite.material = mat
 		remove_outline.append(o_sprite)
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE or what == NOTIFICATION_EXIT_TREE:
+		release_collider()
+
 func release_collider() -> void:
+	while remove_outline.size() > 0:
+		remove_outline.pop_back().material = null
+	
 	if !current_collider:
 		return
 	
