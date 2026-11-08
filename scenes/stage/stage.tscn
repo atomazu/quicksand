@@ -43,11 +43,19 @@ position = Vector2(-36, 40)
 collision_layer = 3
 collision_mask = 3
 
+[node name="GroundDetection" parent="Player" index="2" unique_id=1511495204]
+collision_layer = 3
+collision_mask = 3
+
 [node name="Player2" parent="." unique_id=1336648173 instance=ExtResource("1_8rem4")]
 position = Vector2(32, 40)
 collision_layer = 5
 collision_mask = 5
 input_prefix = "p2"
+
+[node name="GroundDetection" parent="Player2" index="2" unique_id=1511495204]
+collision_layer = 5
+collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=762059606]
 
@@ -91,8 +99,11 @@ randomness = 0.77
 process_material = SubResource("ParticleProcessMaterial_4k0v7")
 
 [node name="KillPlayerAreaBoxBarrierObjectNode" type="Area2D" parent="." unique_id=825393642]
-position = Vector2(0, 250)
+position = Vector2(0, 600)
 script = ExtResource("10_yd2gm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlayerAreaBoxBarrierObjectNode" unique_id=203672201]
 shape = SubResource("WorldBoundaryShape2D_far1q")
+
+[editable path="Player"]
+[editable path="Player2"]
