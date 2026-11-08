@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://xwnmth4bj0bp" path="res://scenes/player/player.gd" id="1_g2els"]
 [ext_resource type="Shader" uid="uid://d24ctoml41xv2" path="res://resources/outline.gdshader" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://bcix6pm08eq6h" path="res://scenes/player/grab_system.gd" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://sqhuajpwlf1e" path="res://sounds/boing.wav" id="5_p47bc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3vyb7"]
 friction = 0.0
@@ -24,7 +25,7 @@ shader_parameter/add_margins = true
 radius = 5.0
 height = 20.0
 
-[node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area", "grab_system", "sprite") groups=["Player"]]
+[node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area", "grab_system", "sprite", "jump_asp") groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_3vyb7")
 lock_rotation = true
 script = ExtResource("1_g2els")
@@ -33,6 +34,7 @@ input_prefix = "p1"
 grab_system = NodePath("GrabSystem")
 player_color = Color(1, 1, 1, 1)
 sprite = NodePath("Sprite2D")
+jump_asp = NodePath("JumpSound")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286655539]
 position = Vector2(-4.7683716e-07, 0)
@@ -74,3 +76,6 @@ offset_left = -1.0
 offset_top = -1.0
 offset_right = 1.0
 offset_bottom = 1.0
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1636967292]
+stream = ExtResource("5_p47bc")

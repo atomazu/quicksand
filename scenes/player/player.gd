@@ -8,6 +8,7 @@ const JUMP_VELOCITY = 400.0
 @export var grab_system: Node
 @export var player_color: Color
 @export var sprite: Sprite2D
+@export var jump_asp: AudioStreamPlayer2D
 
 @onready var timer := Timer.new()
 
@@ -26,11 +27,12 @@ func _ready() -> void:
 	ground_area.area_exited.connect(_on_ground_area_area_exited)
 	timer.timeout.connect(_on_timer_timeout)
 	add_child(timer)
-	
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed(input_prefix + "_jump") and bodies_below_feet > 1 and can_jump:
 		apply_central_impulse(Vector2.UP * JUMP_VELOCITY * sand_damp)
+		jump_asp.pitch_scale = randf_range(0.5, 1.5)
+		jump_asp.play()
 		can_jump = false
 
 	if !Input.is_action_pressed(input_prefix + "_jump"):
