@@ -28,6 +28,8 @@ height = 20.0
 [node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area", "grab_system", "sprite", "jump_asp") groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_3vyb7")
 lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 4
 script = ExtResource("1_g2els")
 ground_area = NodePath("GroundDetection")
 input_prefix = "p1"
