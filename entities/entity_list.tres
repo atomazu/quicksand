@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="EntityList" format=3 uid="uid://c6yawuml1lot0"]
 
-[ext_resource type="Script" uid="uid://1nw2i0ardlwb" path="res://scenes/resources/entity.gd" id="1_hc6p2"]
+[ext_resource type="Script" uid="uid://1nw2i0ardlwb" path="res://resources/entity.gd" id="1_hc6p2"]
 [ext_resource type="PackedScene" uid="uid://bj5jfielxvkwx" path="res://entities/box_line.tscn" id="2_61yj1"]
 [ext_resource type="PackedScene" uid="uid://diydkg1lyb6s1" path="res://entities/box_s.tscn" id="3_yabtb"]
 [ext_resource type="PackedScene" uid="uid://djs6bq6bc0fj5" path="res://entities/box_t.tscn" id="4_i1xqc"]
 [ext_resource type="PackedScene" uid="uid://cbpoflllc0mf7" path="res://entities/box.tscn" id="5_oi3c3"]
 [ext_resource type="PackedScene" uid="uid://0rpmxvwp7m76" path="res://entities/box_L.tscn" id="6_2fby1"]
-[ext_resource type="Script" uid="uid://byitkepd2p7vr" path="res://scenes/resources/entities.gd" id="7_ardun"]
+[ext_resource type="Script" uid="uid://byitkepd2p7vr" path="res://resources/entities.gd" id="7_ardun"]
 
 [sub_resource type="Resource" id="Resource_p7mml"]
 script = ExtResource("1_hc6p2")
