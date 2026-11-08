@@ -20,8 +20,9 @@ shader_parameter/pattern = 0
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_15jrk"]
-size = Vector2(15, 2)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hc6p2"]
+radius = 5.0
+height = 20.0
 
 [node name="Player" type="RigidBody2D" unique_id=626033914 node_paths=PackedStringArray("ground_area") groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_3vyb7")
@@ -49,7 +50,8 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetection" unique_id=1735841062]
 position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_15jrk")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hc6p2")
 
 [node name="GrabSystem" type="Node" parent="." unique_id=1151985556 node_paths=PackedStringArray("raycast", "grabpoint", "sprite")]
 script = ExtResource("3_qhqgy")

@@ -69,6 +69,7 @@ func _on_ground_area_area_exited(_body):
 # INVESTIGATE: Sometimes it does not progress to death scene... for some reason
 func _on_timer_timeout():
 	if sand_damp == 0:
+		timer.stop()
 		Global.deaths_this_round += 1
 		# Called when: A player has died
 		# Versus => Exit to results screen
@@ -77,6 +78,7 @@ func _on_timer_timeout():
 			Global.winner = name
 			get_tree().change_scene_to_file("uid://30utcg1gn6of") # UID Reference to death screen
 			Global.deaths_this_round = 0
+		queue_free()
 	elif sand_damp < 0.15:
 		sand_damp = 0
 	else:
