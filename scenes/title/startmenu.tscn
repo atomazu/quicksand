@@ -117,15 +117,25 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Survival" type="Button" parent="Control/VBoxContainer" unique_id=1996195822]
-z_index = 2
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../Versus")
+focus_neighbor_top = NodePath("../Versus")
+focus_neighbor_right = NodePath("../Versus")
+focus_neighbor_bottom = NodePath("../Versus")
+focus_next = NodePath("../Versus")
+focus_previous = NodePath("../Versus")
 script = ExtResource("9_086el")
 
 [node name="Versus" type="Button" parent="Control/VBoxContainer" unique_id=1376610668]
-z_index = 4
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../Survival")
+focus_neighbor_top = NodePath("../Survival")
+focus_neighbor_right = NodePath("../Survival")
+focus_neighbor_bottom = NodePath("../Survival")
+focus_next = NodePath("../Survival")
+focus_previous = NodePath("../Survival")
 script = ExtResource("10_kbbg3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1375224485]
