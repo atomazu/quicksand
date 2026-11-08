@@ -70,3 +70,6 @@ func release_collider() -> void:
 	last_collider.set_collision_mask_value(2,true)
 	last_collider.set_collision_mask_value(3,true)
 	current_collider = null
+
+func get_current_collider():
+	return current_collider

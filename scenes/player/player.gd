@@ -5,6 +5,7 @@ const JUMP_VELOCITY = 400.0
 
 @export var ground_area: Area2D
 @export var input_prefix: String
+@export var grab_system: Node
 
 @onready var timer := Timer.new()
 
@@ -47,21 +48,32 @@ func _physics_process(_delta: float) -> void:
 		apply_central_impulse(Vector2(-linear_velocity.x, 0)/8)
 
 func _on_ground_area_body_entered(_body: Node):
+	if grab_system.get_current_collider() and _body.get_instance_id() == grab_system.get_current_collider().get_instance_id():
+		return
 	bodies_below_feet += 1
 	if !timer.is_stopped() and !_body.is_in_group("Player") and !_body is TileMapLayer and !in_sand:
 		timer.stop()
 		sand_damp = 1
 
 func _on_ground_area_body_exited(_body):
+	if grab_system.get_current_collider() and \
+		_body.get_instance_id() == grab_system.get_current_collider().get_instance_id():
+		return
 	bodies_below_feet -= 1
 
-func _on_ground_area_area_entered(_body):
+func _on_ground_area_area_entered(_body: Node):
+	if grab_system.get_current_collider() and \
+		_body.get_instance_id() == grab_system.get_current_collider().get_instance_id():
+		return
 	bodies_below_feet += 1
 	in_sand = true
 	if timer.is_stopped():
 		timer.start(1)
 
 func _on_ground_area_area_exited(_body):
+	if grab_system.get_current_collider() and \
+		_body.get_instance_id() == grab_system.get_current_collider().get_instance_id():
+		return
 	bodies_below_feet -= 1
 	in_sand = false
 
