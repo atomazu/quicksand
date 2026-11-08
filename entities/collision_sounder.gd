@@ -11,7 +11,6 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body) -> void:
-	print(linear_velocity.length())
 	if body is RigidBody2D:
 		if linear_velocity.length() + body.linear_velocity.length() <= 100.0:
 			return
