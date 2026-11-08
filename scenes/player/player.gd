@@ -90,6 +90,8 @@ func _on_timer_timeout():
 	if sand_damp == 0:
 		timer.stop()
 		Global.deaths_this_round += 1
+		if Global.died_first == null:
+			Global.died_first = name
 		# Called when: A player has died
 		# Versus => Exit to results screen
 		# Survival => If `Global.deaths_this_round` count is at least 2, exit to results screen

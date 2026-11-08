@@ -41,24 +41,24 @@ spawn_height = -400.0
 spawn_width = 300.0
 entity_list = ExtResource("2_2so7o")
 
-[node name="Player" parent="." unique_id=381838707 instance=ExtResource("1_8rem4")]
+[node name="Red" parent="." unique_id=381838707 instance=ExtResource("1_8rem4")]
 position = Vector2(-36, 40)
 collision_layer = 3
 collision_mask = 3
 player_color = Color(1, 0, 0.016666412, 1)
 
-[node name="GroundDetection" parent="Player" index="2" unique_id=1511495204]
+[node name="GroundDetection" parent="Red" index="2" unique_id=1511495204]
 collision_layer = 3
 collision_mask = 3
 
-[node name="Player2" parent="." unique_id=1336648173 instance=ExtResource("1_8rem4")]
+[node name="Blue" parent="." unique_id=1336648173 instance=ExtResource("1_8rem4")]
 position = Vector2(32, 40)
 collision_layer = 5
 collision_mask = 5
 input_prefix = "p2"
 player_color = Color(0, 0.3666668, 1, 1)
 
-[node name="GroundDetection" parent="Player2" index="2" unique_id=1511495204]
+[node name="GroundDetection" parent="Blue" index="2" unique_id=1511495204]
 collision_layer = 5
 collision_mask = 5
 
@@ -128,5 +128,5 @@ autoplay = true
 stream = ExtResource("13_gygk3")
 autoplay = true
 
-[editable path="Player"]
-[editable path="Player2"]
+[editable path="Red"]
+[editable path="Blue"]

@@ -1,6 +1,7 @@
 extends Label
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text = str(int(round(Global.time)))
+	if Global.is_survival:
+		text = "Score: " + str(int(round(Global.time)))
+	else:
+		text = "The winner is: " + ("Red" if Global.died_first == "Blue" else "Blue")

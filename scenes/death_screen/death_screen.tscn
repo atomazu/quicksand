@@ -13,9 +13,6 @@
 [sub_resource type="LabelSettings" id="LabelSettings_i60to"]
 font_size = 100
 
-[sub_resource type="LabelSettings" id="LabelSettings_3a5br"]
-font_size = 50
-
 [node name="death_screen" type="Node2D" unique_id=839215207]
 script = ExtResource("1_wtkkp")
 
@@ -67,23 +64,15 @@ offset_bottom = 209.0
 text = "Game Over"
 label_settings = SubResource("LabelSettings_i60to")
 
-[node name="Score" type="Label" parent="." unique_id=1626149561]
-offset_left = 153.0
-offset_top = 201.0
-offset_right = 435.0
-offset_bottom = 270.0
-text = "Score:"
-label_settings = SubResource("LabelSettings_3a5br")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1072232206]
 stream = ExtResource("8_wraau")
 autoplay = true
 
 [node name="Label" type="Label" parent="." unique_id=303109850]
-offset_left = 310.0
+offset_left = 104.0
 offset_top = 204.0
 offset_right = 657.0
 offset_bottom = 296.0
 theme_override_font_sizes/font_size = 50
-text = "%i"
+text = "{Result String}"
 script = ExtResource("9_vyrcq")

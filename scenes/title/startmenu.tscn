@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cssecraaixrrp" path="res://assets/9.png" id="6_oveq4"]
 [ext_resource type="Texture2D" uid="uid://qxdjh54gpdi7" path="res://assets/7.png" id="7_086el"]
 [ext_resource type="Texture2D" uid="uid://dawbli2qou5w3" path="res://assets/6.png" id="8_28irt"]
-[ext_resource type="FontFile" uid="uid://to2u6qt3g7xr" path="res://assets/Dancing_Script/static/DancingScript-Bold.ttf" id="9_2i7qt"]
 [ext_resource type="Script" uid="uid://1jg1aoovr17t" path="res://scenes/title/start_survival.gd" id="9_086el"]
+[ext_resource type="FontFile" uid="uid://c6scka42wh2vf" path="res://assets/Dancing_Script/DancingScript-VariableFont_wght.ttf" id="9_rmrbn"]
 [ext_resource type="Script" uid="uid://cwhx8n27f4ovb" path="res://scenes/title/start_versus.gd" id="10_kbbg3"]
 [ext_resource type="Script" uid="uid://ctd2hou8aq5pc" path="res://scenes/title/title_gen.gd" id="11_qpdwg"]
 [ext_resource type="AudioStream" uid="uid://digq0v51tm5fm" path="res://sounds/Untitled.wav" id="13_rmrbn"]
@@ -95,7 +95,7 @@ offset_top = 86.0
 offset_right = 953.0
 offset_bottom = 238.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.52156866)
-theme_override_fonts/normal_font = ExtResource("9_2i7qt")
+theme_override_fonts/normal_font = ExtResource("9_rmrbn")
 theme_override_font_sizes/normal_font_size = 55
 text = "Title Text"
 horizontal_alignment = 1
