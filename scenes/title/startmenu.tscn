@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://1jg1aoovr17t" path="res://scenes/title/start_survival.gd" id="9_086el"]
 [ext_resource type="Script" uid="uid://cwhx8n27f4ovb" path="res://scenes/title/start_versus.gd" id="10_kbbg3"]
 [ext_resource type="Script" uid="uid://ctd2hou8aq5pc" path="res://scenes/title/title_gen.gd" id="11_qpdwg"]
+[ext_resource type="AudioStream" uid="uid://ckiq1u4owyhla" path="res://sounds/Title.wav" id="13_rmrbn"]
 
 [node name="Title" type="Node" unique_id=1751799469]
 
@@ -126,3 +127,7 @@ z_index = 4
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("10_kbbg3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1375224485]
+stream = ExtResource("13_rmrbn")
+autoplay = true
