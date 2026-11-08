@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bccvk7fwrv3gc" path="res://scenes/stage/kill_player_area_box_barrier_object_node_script.gd" id="10_yd2gm"]
 [ext_resource type="AudioStream" uid="uid://5tsutay6dscb" path="res://sounds/so_much_sand.wav" id="11_cwi0x"]
 [ext_resource type="AudioStream" uid="uid://bk31v22gmfagt" path="res://sounds/definitely_sand.wav" id="12_lrsvv"]
+[ext_resource type="AudioStream" uid="uid://dtoeq0p7bnjnx" path="res://sounds/game.wav" id="13_gygk3"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4k0v7"]
 particle_flag_disable_z = true
@@ -115,12 +116,16 @@ shape = SubResource("WorldBoundaryShape2D_far1q")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1694650516]
 stream = ExtResource("11_cwi0x")
-volume_db = -30.0
+volume_db = -20.0
 autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1472087143]
 stream = ExtResource("12_lrsvv")
-volume_db = -30.0
+volume_db = -20.0
+autoplay = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=1691994675]
+stream = ExtResource("13_gygk3")
 autoplay = true
 
 [editable path="Player"]
