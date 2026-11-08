@@ -18,8 +18,8 @@
 [node name="Sprites" type="Node2D" parent="." unique_id=405477236]
 
 [node name="CethielDesertEdit" type="Sprite2D" parent="Sprites" unique_id=1791317749]
-position = Vector2(575.5, 323.625)
-scale = Vector2(1.4046456, 1.007422)
+position = Vector2(575.49994, 322.99997)
+scale = Vector2(1.4144254, 1.0218751)
 texture = ExtResource("1_hhy7i")
 
 [node name="27" type="Sprite2D" parent="Sprites" unique_id=1389720441]
